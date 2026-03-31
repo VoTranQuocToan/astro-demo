@@ -74,7 +74,16 @@ const products = [
   <meta name="description" content="AllXOne là công ty IT chuyên cung cấp dịch vụ phát triển phần mềm, AI, Cloud, Blockchain, tuyển dụng và tư vấn công nghệ tại TP.HCM." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :lang(ja) body, :lang(ja) p, :lang(ja) span, :lang(ja) a, :lang(ja) li {
+      font-family: 'Noto Sans JP', 'DM Sans', sans-serif;
+    }
+    :lang(ja) h1, :lang(ja) h2, :lang(ja) h3 {
+      font-family: 'Noto Sans JP', 'Syne', sans-serif;
+      letter-spacing: 0.02em;
+    }
+  </style>
 </head>
 <body>
 
@@ -85,12 +94,19 @@ const products = [
       <span class="logo-x">ALL</span><span class="logo-accent">X</span><span class="logo-x">ONE</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#services">Dịch vụ</a></li>
-      <li><a href="#about">Về chúng tôi</a></li>
-      <li><a href="#products">Sản phẩm</a></li>
-      <li><a href="#contact">Liên hệ</a></li>
+      <li><a href="#services" data-i18n="nav.services">Dịch vụ</a></li>
+      <li><a href="#about" data-i18n="nav.about">Về chúng tôi</a></li>
+      <li><a href="#products" data-i18n="nav.products">Sản phẩm</a></li>
+      <li><a href="#contact" data-i18n="nav.contact_link">Liên hệ</a></li>
     </ul>
-    <a href="mailto:info@allxone.vn" class="btn-nav">Liên hệ ngay</a>
+    <a href="mailto:info@allxone.vn" class="btn-nav" data-i18n="nav.contact">Liên hệ ngay</a>
+    <div class="lang-switcher" id="langSwitcher" aria-label="Chuyển ngôn ngữ">
+      <button class="lang-btn active" data-lang="vi">VI</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" data-lang="ja">JP</button>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -108,21 +124,21 @@ const products = [
   <div class="hero-content">
     <div class="hero-badge">
       <span class="dot"></span>
-      <span>IT Services · HCM City, Vietnam</span>
+      <span data-i18n="hero.badge">IT Services · HCM City, Vietnam</span>
     </div>
-    <h1 class="hero-title">
+    <h1 class="hero-title" data-i18n-html="hero.title">
       Giải pháp công nghệ<br />
       <span class="title-accent">toàn diện</span> cho<br />
       doanh nghiệp bạn
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" data-i18n="hero.sub">
       Delivered With A Service MindSet — Chúng tôi xây dựng phần mềm, AI,
       Cloud và cung cấp nhân lực IT chất lượng cao để doanh nghiệp của bạn
       phát triển bứt phá.
     </p>
     <div class="hero-cta">
-      <a href="#services" class="btn-primary">Xem dịch vụ</a>
-      <a href="#contact" class="btn-ghost">Nói chuyện với chúng tôi →</a>
+      <a href="#services" class="btn-primary" data-i18n="hero.cta1">Xem dịch vụ</a>
+      <a href="#contact" class="btn-ghost" data-i18n="hero.cta2">Nói chuyện với chúng tôi →</a>
     </div>
     <div class="hero-tags">
       <span>Web App</span><span>Mobile App</span><span>AI / ML</span>
@@ -166,33 +182,69 @@ const products = [
 
 <!-- ─── STATS ─── -->
 <section class="stats-bar">
-  {stats.map(s => (
-    <div class="stat-item">
-      <span class="stat-num">{s.num}</span>
-      <span class="stat-label">{s.label}</span>
-    </div>
-  ))}
+  <div class="stat-item">
+    <span class="stat-num">50+</span>
+    <span class="stat-label" data-i18n="stats.projects">Dự án hoàn thành</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">30+</span>
+    <span class="stat-label" data-i18n="stats.clients">Khách hàng tin tưởng</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">5+</span>
+    <span class="stat-label" data-i18n="stats.years">Năm kinh nghiệm</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">20+</span>
+    <span class="stat-label" data-i18n="stats.experts">Chuyên gia công nghệ</span>
+  </div>
 </section>
 
 <!-- ─── SERVICES ─── -->
 <section class="section" id="services">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">// DỊCH VỤ</span>
-      <h2>Chúng tôi làm được gì<br /><span class="accent">cho bạn?</span></h2>
-      <p>Từ ý tưởng đến sản phẩm — chúng tôi đồng hành trong mọi giai đoạn của hành trình công nghệ.</p>
+      <span class="section-tag" data-i18n="services.tag">// DỊCH VỤ</span>
+      <h2 data-i18n-html="services.title">Chúng tôi làm được gì<br /><span class="accent">cho bạn?</span></h2>
+      <p data-i18n="services.sub">Từ ý tưởng đến sản phẩm — chúng tôi đồng hành trong mọi giai đoạn của hành trình công nghệ.</p>
     </div>
     <div class="services-grid">
-      {services.map((s, i) => (
-        <div class="service-card" style={`--delay: ${i * 0.08}s`}>
-          <div class="service-icon">{s.icon}</div>
-          <h3>{s.title}</h3>
-          <p>{s.desc}</p>
-          <div class="service-tags">
-            {s.tags.map(t => <span>{t}</span>)}
-          </div>
-        </div>
-      ))}
+      <div class="service-card" style="--delay:0s">
+        <div class="service-icon">💻</div>
+        <h3 data-i18n="svc.s1.title">Phát Triển Phần Mềm</h3>
+        <p data-i18n="svc.s1.desc">Web App, Mobile App, API & hệ thống backend tùy chỉnh theo yêu cầu.</p>
+        <div class="service-tags"><span>React</span><span>Node.js</span><span>Flutter</span><span>Golang</span></div>
+      </div>
+      <div class="service-card" style="--delay:0.08s">
+        <div class="service-icon">☁️</div>
+        <h3 data-i18n="svc.s2.title">Cloud & AI</h3>
+        <p data-i18n="svc.s2.desc">Triển khai hạ tầng cloud, tích hợp AI/ML, OCR, NLP và Big Data.</p>
+        <div class="service-tags"><span>AWS</span><span>GCP</span><span>TensorFlow</span><span>PyTorch</span></div>
+      </div>
+      <div class="service-card" style="--delay:0.16s">
+        <div class="service-icon">🔗</div>
+        <h3 data-i18n="svc.s3.title">Blockchain</h3>
+        <p data-i18n="svc.s3.desc">Xây dựng smart contract, DApps và giải pháp Web3 doanh nghiệp.</p>
+        <div class="service-tags"><span>Solidity</span><span>Ethereum</span><span>Hyperledger</span></div>
+      </div>
+      <div class="service-card" style="--delay:0.24s">
+        <div class="service-icon">🔄</div>
+        <h3 data-i18n="svc.s4.title">Chuyển Đổi Số</h3>
+        <p data-i18n="svc.s4.desc">Tư vấn và triển khai digital transformation toàn diện cho doanh nghiệp.</p>
+        <div class="service-tags"><span>ERP</span><span>CRM</span><span>Automation</span><span>IoT</span></div>
+      </div>
+      <div class="service-card" style="--delay:0.32s">
+        <div class="service-icon">👥</div>
+        <h3 data-i18n="svc.s5.title">IT Staffing</h3>
+        <p data-i18n="svc.s5.desc">Cung cấp nhân sự IT chất lượng cao, tuyển dụng và gia công nhân lực.</p>
+        <div class="service-tags"><span>Headhunting</span><span>Outsource</span><span>Offshore</span></div>
+      </div>
+      <div class="service-card" style="--delay:0.40s">
+        <div class="service-icon">📊</div>
+        <h3 data-i18n="svc.s6.title">Tư Vấn IT</h3>
+        <p data-i18n="svc.s6.desc">Thiết kế kiến trúc hệ thống, audit công nghệ và lộ trình phát triển.</p>
+        <div class="service-tags"><span>Architecture</span><span>Audit</span><span>Roadmap</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -201,33 +253,21 @@ const products = [
 <section class="section about-section" id="about">
   <div class="container about-grid">
     <div class="about-left">
-      <span class="section-tag">// VỀ CHÚNG TÔI</span>
-      <h2>Đội ngũ <span class="accent">chuyên gia</span><br />đầy nhiệt huyết</h2>
-      <p class="about-desc">
+      <span class="section-tag" data-i18n="about.tag">// VỀ CHÚNG TÔI</span>
+      <h2 data-i18n-html="about.title">Đội ngũ <span class="accent">chuyên gia</span><br />đầy nhiệt huyết</h2>
+      <p class="about-desc" data-i18n-html="about.desc">
         AllXOne là công ty TNHH Dịch vụ IT X, hoạt động tại TP.HCM với sứ mệnh
         cung cấp dịch vụ công nghệ đáng tin cậy và nhất quán. Chúng tôi tin vào
         câu ngạn ngữ <em>"Theo đuổi sự xuất sắc và thành công chắc chắn sẽ theo sau."</em>
       </p>
       <div class="about-features">
-        <div class="af-item">
-          <span class="af-dot"></span>
-          <span>Nhóm full-stack từ frontend đến backend</span>
-        </div>
-        <div class="af-item">
-          <span class="af-dot"></span>
-          <span>Chuyên gia AI, Cloud và Blockchain</span>
-        </div>
-        <div class="af-item">
-          <span class="af-dot"></span>
-          <span>Hợp tác linh hoạt, giao tiếp minh bạch</span>
-        </div>
-        <div class="af-item">
-          <span class="af-dot"></span>
-          <span>Cam kết chất lượng và đúng tiến độ</span>
-        </div>
+        <div class="af-item"><span class="af-dot"></span><span data-i18n="about.f1">Nhóm full-stack từ frontend đến backend</span></div>
+        <div class="af-item"><span class="af-dot"></span><span data-i18n="about.f2">Chuyên gia AI, Cloud và Blockchain</span></div>
+        <div class="af-item"><span class="af-dot"></span><span data-i18n="about.f3">Hợp tác linh hoạt, giao tiếp minh bạch</span></div>
+        <div class="af-item"><span class="af-dot"></span><span data-i18n="about.f4">Cam kết chất lượng và đúng tiến độ</span></div>
       </div>
       <div class="about-cta">
-        <a href="/vi/ve-chung-toi/" class="btn-primary">Tìm hiểu thêm</a>
+        <a href="/vi/ve-chung-toi/" class="btn-primary" data-i18n="about.cta">Tìm hiểu thêm</a>
       </div>
     </div>
     <div class="about-right">
@@ -244,22 +284,10 @@ const products = [
           </div>
           <div class="ac-divider"></div>
           <div class="ac-skills">
-            <div class="skill-row">
-              <span>Web Development</span>
-              <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
-            </div>
-            <div class="skill-row">
-              <span>Mobile App</span>
-              <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-            </div>
-            <div class="skill-row">
-              <span>AI / Machine Learning</span>
-              <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-            </div>
-            <div class="skill-row">
-              <span>Cloud Infrastructure</span>
-              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-            </div>
+            <div class="skill-row"><span>Web Development</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+            <div class="skill-row"><span>Mobile App</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><span>AI / Machine Learning</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+            <div class="skill-row"><span>Cloud Infrastructure</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
           </div>
         </div>
       </div>
@@ -271,19 +299,29 @@ const products = [
 <section class="section" id="products">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">// SẢN PHẨM</span>
-      <h2>Các sản phẩm <span class="accent">nổi bật</span></h2>
-      <p>Danh mục đa dạng — từ nền tảng tuyển dụng AI đến ứng dụng giải trí và công cụ chuyển đổi.</p>
+      <span class="section-tag" data-i18n="products.tag">// SẢN PHẨM</span>
+      <h2 data-i18n-html="products.title">Các sản phẩm <span class="accent">nổi bật</span></h2>
+      <p data-i18n="products.sub">Danh mục đa dạng — từ nền tảng tuyển dụng AI đến ứng dụng giải trí và công cụ chuyển đổi.</p>
     </div>
     <div class="products-grid">
-      {products.map((p, i) => (
-        <div class="product-card" style={`--delay: ${i * 0.1}s`}>
-          <div class="product-tag">{p.tag}</div>
-          <h3>{p.name}</h3>
-          <p>{p.desc}</p>
-          <a href="#" class="product-link">Xem chi tiết →</a>
-        </div>
-      ))}
+      <div class="product-card" style="--delay:0s">
+        <div class="product-tag">AI · Recruitment</div>
+        <h3 data-i18n="prod.p1.name">AI Recruitment Platform</h3>
+        <p data-i18n="prod.p1.desc">Nền tảng tuyển dụng AI & Big Data, kết nối ứng viên và nhà tuyển dụng thông minh.</p>
+        <a href="#" class="product-link" data-i18n="products.detail">Xem chi tiết →</a>
+      </div>
+      <div class="product-card" style="--delay:0.1s">
+        <div class="product-tag">Gaming · Web · Mobile</div>
+        <h3 data-i18n="prod.p2.name">GameHub Platform</h3>
+        <p data-i18n="prod.p2.desc">Tập hợp game web & mobile, đa thể loại, đồ họa đẹp trên cả hai nền tảng.</p>
+        <a href="#" class="product-link" data-i18n="products.detail">Xem chi tiết →</a>
+      </div>
+      <div class="product-card" style="--delay:0.2s">
+        <div class="product-tag">Audio · Converter</div>
+        <h3 data-i18n="prod.p3.name">Music Converter</h3>
+        <p data-i18n="prod.p3.desc">Chuyển đổi file nhạc và link thành XML để tải về hoặc nghe trực tuyến.</p>
+        <a href="#" class="product-link" data-i18n="products.detail">Xem chi tiết →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -295,16 +333,12 @@ const products = [
     <div class="orb orb-cta-2"></div>
   </div>
   <div class="container cta-inner">
-    <span class="section-tag">// LIÊN HỆ</span>
-    <h2>Sẵn sàng bắt đầu<br /><span class="accent">dự án của bạn?</span></h2>
-    <p>Hãy nói chuyện với chúng tôi — từ ý tưởng đơn giản đến hệ thống phức tạp, chúng tôi luôn sẵn sàng.</p>
+    <span class="section-tag" data-i18n="cta.tag">// LIÊN HỆ</span>
+    <h2 data-i18n-html="cta.title">Sẵn sàng bắt đầu<br /><span class="accent">dự án của bạn?</span></h2>
+    <p data-i18n="cta.sub">Hãy nói chuyện với chúng tôi — từ ý tưởng đơn giản đến hệ thống phức tạp, chúng tôi luôn sẵn sàng.</p>
     <div class="cta-actions">
-      <a href="mailto:info@allxone.vn" class="btn-primary btn-large">
-        info@allxone.vn
-      </a>
-      <a href="https://www.facebook.com/AllXOne.vn" target="_blank" rel="noopener" class="btn-ghost">
-        Facebook →
-      </a>
+      <a href="mailto:info@allxone.vn" class="btn-primary btn-large">info@allxone.vn</a>
+      <a href="https://www.facebook.com/AllXOne.vn" target="_blank" rel="noopener" class="btn-ghost">Facebook →</a>
     </div>
     <div class="cta-info">
       <span>📍 10A Trần Quang Diệu, P.14, Q.3, TP.HCM</span>
@@ -323,23 +357,23 @@ const products = [
     </div>
     <div class="footer-links">
       <div class="footer-col">
-        <h4>Dịch vụ</h4>
-        <a href="#">Phát triển phần mềm</a>
+        <h4 data-i18n="footer.services">Dịch vụ</h4>
+        <a href="#" data-i18n="svc.s1.title">Phát triển phần mềm</a>
         <a href="#">Cloud & AI</a>
         <a href="#">Blockchain</a>
-        <a href="#">IT Staffing</a>
+        <a href="#" data-i18n="svc.s5.title">IT Staffing</a>
       </div>
       <div class="footer-col">
-        <h4>Công ty</h4>
-        <a href="/vi/ve-chung-toi/">Về chúng tôi</a>
-        <a href="/vi/product-it-services-2/">Sản phẩm</a>
-        <a href="/vi/product-it-services-2/tuyen-dung/">Tuyển dụng</a>
-        <a href="mailto:info@allxone.vn">Liên hệ</a>
+        <h4 data-i18n="footer.company">Công ty</h4>
+        <a href="/vi/ve-chung-toi/" data-i18n="about.cta">Về chúng tôi</a>
+        <a href="/vi/product-it-services-2/" data-i18n="nav.products">Sản phẩm</a>
+        <a href="/vi/product-it-services-2/tuyen-dung/" data-i18n="footer.recruit">Tuyển dụng</a>
+        <a href="mailto:info@allxone.vn" data-i18n="nav.contact_link">Liên hệ</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2024 AllXOne — CÔNG TY TNHH DỊCH VỤ IT X</span>
+    <span data-i18n="footer.copy">© 2024 AllXOne — CÔNG TY TNHH DỊCH VỤ IT X</span>
   </div>
 </footer>
 
@@ -668,7 +702,23 @@ const products = [
   .footer-col a:hover { color: var(--text); }
   .footer-bottom { text-align: center; padding: 1.5rem 2rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); margin-top: 3rem; }
 
-  @keyframes fadeUp {
+  .lang-switcher {
+    display: flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    border-radius: 8px; padding: 4px 8px;
+  }
+  .lang-btn {
+    background: none; border: none; cursor: pointer;
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+    color: var(--muted); padding: 2px 6px; border-radius: 5px;
+    transition: color 0.2s, background 0.2s;
+    letter-spacing: 0.05em;
+  }
+  .lang-btn:hover { color: var(--text); }
+  .lang-btn.active { color: var(--accent); background: rgba(0,229,255,0.08); }
+  .lang-sep { color: var(--border); font-size: 0.75rem; user-select: none; }
+
+
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
@@ -693,6 +743,238 @@ const products = [
 </style>
 
 <script>
+  // ── I18N TRANSLATIONS ──
+  const T = {
+    vi: {
+      "nav.services": "Dịch vụ",
+      "nav.about": "Về chúng tôi",
+      "nav.products": "Sản phẩm",
+      "nav.contact_link": "Liên hệ",
+      "nav.contact": "Liên hệ ngay",
+
+      "hero.badge": "IT Services · TP.HCM, Việt Nam",
+      "hero.title": `Giải pháp công nghệ<br /><span class="title-accent">toàn diện</span> cho<br />doanh nghiệp bạn`,
+      "hero.sub": "Delivered With A Service MindSet — Chúng tôi xây dựng phần mềm, AI, Cloud và cung cấp nhân lực IT chất lượng cao để doanh nghiệp của bạn phát triển bứt phá.",
+      "hero.cta1": "Xem dịch vụ",
+      "hero.cta2": "Nói chuyện với chúng tôi →",
+
+      "stats.projects": "Dự án hoàn thành",
+      "stats.clients": "Khách hàng tin tưởng",
+      "stats.years": "Năm kinh nghiệm",
+      "stats.experts": "Chuyên gia công nghệ",
+
+      "services.tag": "// DỊCH VỤ",
+      "services.title": `Chúng tôi làm được gì<br /><span class="accent">cho bạn?</span>`,
+      "services.sub": "Từ ý tưởng đến sản phẩm — chúng tôi đồng hành trong mọi giai đoạn của hành trình công nghệ.",
+
+      "svc.s1.title": "Phát Triển Phần Mềm",
+      "svc.s1.desc": "Web App, Mobile App, API & hệ thống backend tùy chỉnh theo yêu cầu.",
+      "svc.s2.title": "Cloud & AI",
+      "svc.s2.desc": "Triển khai hạ tầng cloud, tích hợp AI/ML, OCR, NLP và Big Data.",
+      "svc.s3.title": "Blockchain",
+      "svc.s3.desc": "Xây dựng smart contract, DApps và giải pháp Web3 doanh nghiệp.",
+      "svc.s4.title": "Chuyển Đổi Số",
+      "svc.s4.desc": "Tư vấn và triển khai digital transformation toàn diện cho doanh nghiệp.",
+      "svc.s5.title": "IT Staffing",
+      "svc.s5.desc": "Cung cấp nhân sự IT chất lượng cao, tuyển dụng và gia công nhân lực.",
+      "svc.s6.title": "Tư Vấn IT",
+      "svc.s6.desc": "Thiết kế kiến trúc hệ thống, audit công nghệ và lộ trình phát triển.",
+
+      "about.tag": "// VỀ CHÚNG TÔI",
+      "about.title": `Đội ngũ <span class="accent">chuyên gia</span><br />đầy nhiệt huyết`,
+      "about.desc": `AllXOne là công ty TNHH Dịch vụ IT X, hoạt động tại TP.HCM với sứ mệnh cung cấp dịch vụ công nghệ đáng tin cậy và nhất quán. Chúng tôi tin vào câu ngạn ngữ <em>"Theo đuổi sự xuất sắc và thành công chắc chắn sẽ theo sau."</em>`,
+      "about.f1": "Nhóm full-stack từ frontend đến backend",
+      "about.f2": "Chuyên gia AI, Cloud và Blockchain",
+      "about.f3": "Hợp tác linh hoạt, giao tiếp minh bạch",
+      "about.f4": "Cam kết chất lượng và đúng tiến độ",
+      "about.cta": "Tìm hiểu thêm",
+
+      "products.tag": "// SẢN PHẨM",
+      "products.title": `Các sản phẩm <span class="accent">nổi bật</span>`,
+      "products.sub": "Danh mục đa dạng — từ nền tảng tuyển dụng AI đến ứng dụng giải trí và công cụ chuyển đổi.",
+      "products.detail": "Xem chi tiết →",
+      "prod.p1.name": "AI Recruitment Platform",
+      "prod.p1.desc": "Nền tảng tuyển dụng AI & Big Data, kết nối ứng viên và nhà tuyển dụng thông minh.",
+      "prod.p2.name": "GameHub Platform",
+      "prod.p2.desc": "Tập hợp game web & mobile, đa thể loại, đồ họa đẹp trên cả hai nền tảng.",
+      "prod.p3.name": "Music Converter",
+      "prod.p3.desc": "Chuyển đổi file nhạc và link thành XML để tải về hoặc nghe trực tuyến.",
+
+      "cta.tag": "// LIÊN HỆ",
+      "cta.title": `Sẵn sàng bắt đầu<br /><span class="accent">dự án của bạn?</span>`,
+      "cta.sub": "Hãy nói chuyện với chúng tôi — từ ý tưởng đơn giản đến hệ thống phức tạp, chúng tôi luôn sẵn sàng.",
+
+      "footer.services": "Dịch vụ",
+      "footer.company": "Công ty",
+      "footer.recruit": "Tuyển dụng",
+      "footer.copy": "© 2024 AllXOne — CÔNG TY TNHH DỊCH VỤ IT X",
+    },
+    en: {
+      "nav.services": "Services",
+      "nav.about": "About Us",
+      "nav.products": "Products",
+      "nav.contact_link": "Contact",
+      "nav.contact": "Get In Touch",
+
+      "hero.badge": "IT Services · Ho Chi Minh City, Vietnam",
+      "hero.title": `Complete technology<br />solutions for<br /><span class="title-accent">your business</span>`,
+      "hero.sub": "Delivered With A Service MindSet — We build software, AI, Cloud solutions and supply top-tier IT talent to help your business break through.",
+      "hero.cta1": "Our Services",
+      "hero.cta2": "Talk to us →",
+
+      "stats.projects": "Projects Delivered",
+      "stats.clients": "Trusted Clients",
+      "stats.years": "Years of Experience",
+      "stats.experts": "Tech Experts",
+
+      "services.tag": "// SERVICES",
+      "services.title": `What can we do<br /><span class="accent">for you?</span>`,
+      "services.sub": "From idea to product — we partner with you at every stage of your technology journey.",
+
+      "svc.s1.title": "Software Development",
+      "svc.s1.desc": "Web Apps, Mobile Apps, APIs & custom backend systems built to your requirements.",
+      "svc.s2.title": "Cloud & AI",
+      "svc.s2.desc": "Cloud infrastructure deployment, AI/ML integration, OCR, NLP and Big Data solutions.",
+      "svc.s3.title": "Blockchain",
+      "svc.s3.desc": "Smart contracts, DApps and enterprise Web3 solutions.",
+      "svc.s4.title": "Digital Transformation",
+      "svc.s4.desc": "Consulting and end-to-end digital transformation implementation for enterprises.",
+      "svc.s5.title": "IT Staffing",
+      "svc.s5.desc": "High-quality IT talent acquisition, recruitment and offshore outsourcing services.",
+      "svc.s6.title": "IT Consulting",
+      "svc.s6.desc": "System architecture design, technology audits and development roadmap planning.",
+
+      "about.tag": "// ABOUT US",
+      "about.title": `A passionate team of<br /><span class="accent">experts</span>`,
+      "about.desc": `AllXOne (IT X Services Co., Ltd.) operates in Ho Chi Minh City with a mission to deliver reliable and consistent technology services. We believe in the motto <em>"Pursue excellence and success will surely follow."</em>`,
+      "about.f1": "Full-stack team from frontend to backend",
+      "about.f2": "Specialists in AI, Cloud and Blockchain",
+      "about.f3": "Flexible collaboration, transparent communication",
+      "about.f4": "Committed to quality and on-time delivery",
+      "about.cta": "Learn More",
+
+      "products.tag": "// PRODUCTS",
+      "products.title": `Our <span class="accent">featured products</span>`,
+      "products.sub": "A diverse portfolio — from AI recruitment platforms to gaming apps and audio conversion tools.",
+      "products.detail": "View details →",
+      "prod.p1.name": "AI Recruitment Platform",
+      "prod.p1.desc": "AI & Big Data recruitment platform intelligently connecting candidates with employers.",
+      "prod.p2.name": "GameHub Platform",
+      "prod.p2.desc": "A collection of web & mobile games across multiple genres with stunning graphics.",
+      "prod.p3.name": "Music Converter",
+      "prod.p3.desc": "Convert music files and links to XML format for download or online streaming.",
+
+      "cta.tag": "// CONTACT",
+      "cta.title": `Ready to start<br /><span class="accent">your project?</span>`,
+      "cta.sub": "Let's talk — from simple ideas to complex systems, we're always ready to help.",
+
+      "footer.services": "Services",
+      "footer.company": "Company",
+      "footer.recruit": "Careers",
+      "footer.copy": "© 2024 AllXOne — IT X SERVICES CO., LTD.",
+    },
+    ja: {
+      "nav.services": "サービス",
+      "nav.about": "会社について",
+      "nav.products": "製品",
+      "nav.contact_link": "お問い合わせ",
+      "nav.contact": "お問い合わせ",
+
+      "hero.badge": "ITサービス · ホーチミン市、ベトナム",
+      "hero.title": `貴社のための<br /><span class="title-accent">包括的な</span><br />テクノロジーソリューション`,
+      "hero.sub": "Delivered With A Service MindSet — ソフトウェア開発、AI、クラウド構築、そして優秀なITエンジニアの供給で、貴社のビジネス成長を支援します。",
+      "hero.cta1": "サービスを見る",
+      "hero.cta2": "お気軽にご相談ください →",
+
+      "stats.projects": "完了プロジェクト",
+      "stats.clients": "信頼のクライアント",
+      "stats.years": "年の経験",
+      "stats.experts": "テクノロジー専門家",
+
+      "services.tag": "// サービス",
+      "services.title": `私たちは何ができるか<br /><span class="accent">お客様のために？</span>`,
+      "services.sub": "アイデアから製品へ — テクノロジーの旅のあらゆる段階でパートナーとして伴走します。",
+
+      "svc.s1.title": "ソフトウェア開発",
+      "svc.s1.desc": "Webアプリ、モバイルアプリ、API、要件に応じたカスタムバックエンドシステム。",
+      "svc.s2.title": "クラウド & AI",
+      "svc.s2.desc": "クラウドインフラ構築、AI/ML・OCR・NLP・ビッグデータの統合ソリューション。",
+      "svc.s3.title": "ブロックチェーン",
+      "svc.s3.desc": "スマートコントラクト、DApps、エンタープライズ向けWeb3ソリューション。",
+      "svc.s4.title": "デジタルトランスフォーメーション",
+      "svc.s4.desc": "企業向けデジタル変革のコンサルティングおよびエンドツーエンドの実装支援。",
+      "svc.s5.title": "ITスタッフィング",
+      "svc.s5.desc": "高品質なITエンジニアの採用・派遣・オフショアアウトソーシングサービス。",
+      "svc.s6.title": "ITコンサルティング",
+      "svc.s6.desc": "システムアーキテクチャ設計、テクノロジー監査、開発ロードマップの策定。",
+
+      "about.tag": "// 会社について",
+      "about.title": `情熱溢れる<br /><span class="accent">専門家チーム</span>`,
+      "about.desc": `AllXOneはホーチミン市を拠点とするITサービス企業です。信頼性と一貫性のあるテクノロジーサービスの提供を使命としています。私たちは<em>「卓越さを追求すれば、成功は必ずついてくる」</em>という信条を大切にしています。`,
+      "about.f1": "フロントエンドからバックエンドまでのフルスタックチーム",
+      "about.f2": "AI・クラウド・ブロックチェーンの専門家",
+      "about.f3": "柔軟な協力体制と透明なコミュニケーション",
+      "about.f4": "品質とスケジュール遵守へのコミットメント",
+      "about.cta": "詳しく見る",
+
+      "products.tag": "// 製品",
+      "products.title": `注目の<span class="accent">プロダクト</span>`,
+      "products.sub": "多様なポートフォリオ — AI採用プラットフォームからゲームアプリ、音楽変換ツールまで。",
+      "products.detail": "詳細を見る →",
+      "prod.p1.name": "AI採用プラットフォーム",
+      "prod.p1.desc": "AI＆ビッグデータを活用し、求職者と採用担当者をスマートにマッチングする採用基盤。",
+      "prod.p2.name": "GameHubプラットフォーム",
+      "prod.p2.desc": "Webおよびモバイルのマルチジャンルゲームをビューティフルなグラフィックで提供。",
+      "prod.p3.name": "ミュージックコンバーター",
+      "prod.p3.desc": "音楽ファイルやリンクをXML形式に変換してダウンロードまたはストリーミング再生。",
+
+      "cta.tag": "// お問い合わせ",
+      "cta.title": `プロジェクトを<br /><span class="accent">始めましょう</span>`,
+      "cta.sub": "シンプルなアイデアから複雑なシステムまで — いつでもご相談ください。",
+
+      "footer.services": "サービス",
+      "footer.company": "会社情報",
+      "footer.recruit": "採用情報",
+      "footer.copy": "© 2024 AllXOne — IT Xサービス有限会社",
+    }
+  };
+
+  let currentLang = localStorage.getItem('axLang') || 'vi';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('axLang', lang);
+    document.documentElement.lang = lang;
+
+    const dict = T[lang];
+
+    // Plain text nodes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    // HTML nodes (contain <span>, <br>, <em> etc.)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+
+    // Update active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  // Language button clicks
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  // Apply on load (restores saved preference)
+  applyLang(currentLang);
+
+  // ── HAMBURGER ──
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.querySelector('.nav-links');
   if (hamburger && navLinks) {
@@ -710,7 +992,7 @@ const products = [
     });
   }
 
-  // Intersection Observer for scroll animations
+  // ── SCROLL ANIMATIONS ──
   const cards = document.querySelectorAll('.service-card, .product-card');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
