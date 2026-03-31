@@ -1,32 +1,724 @@
 ---
+// AllXOne Home Page — Astro + Cloudflare
+const services = [
+  {
+    icon: "💻",
+    title: "Phát Triển Phần Mềm",
+    desc: "Web App, Mobile App, API & hệ thống backend tùy chỉnh theo yêu cầu.",
+    tags: ["React", "Node.js", "Flutter", "Golang"],
+  },
+  {
+    icon: "☁️",
+    title: "Cloud & AI",
+    desc: "Triển khai hạ tầng cloud, tích hợp AI/ML, OCR, NLP và Big Data.",
+    tags: ["AWS", "GCP", "TensorFlow", "PyTorch"],
+  },
+  {
+    icon: "🔗",
+    title: "Blockchain",
+    desc: "Xây dựng smart contract, DApps và giải pháp Web3 doanh nghiệp.",
+    tags: ["Solidity", "Ethereum", "Hyperledger"],
+  },
+  {
+    icon: "🔄",
+    title: "Chuyển Đổi Số",
+    desc: "Tư vấn và triển khai digital transformation toàn diện cho doanh nghiệp.",
+    tags: ["ERP", "CRM", "Automation", "IoT"],
+  },
+  {
+    icon: "👥",
+    title: "IT Staffing",
+    desc: "Cung cấp nhân sự IT chất lượng cao, tuyển dụng và gia công nhân lực.",
+    tags: ["Headhunting", "Outsource", "Offshore"],
+  },
+  {
+    icon: "📊",
+    title: "Tư Vấn IT",
+    desc: "Thiết kế kiến trúc hệ thống, audit công nghệ và lộ trình phát triển.",
+    tags: ["Architecture", "Audit", "Roadmap"],
+  },
+];
+
+const stats = [
+  { num: "50+", label: "Dự án hoàn thành" },
+  { num: "30+", label: "Khách hàng tin tưởng" },
+  { num: "5+", label: "Năm kinh nghiệm" },
+  { num: "20+", label: "Chuyên gia công nghệ" },
+];
+
+const products = [
+  {
+    name: "AI Recruitment Platform",
+    desc: "Nền tảng tuyển dụng AI & Big Data, kết nối ứng viên và nhà tuyển dụng thông minh.",
+    tag: "AI · Recruitment",
+  },
+  {
+    name: "GameHub Platform",
+    desc: "Tập hợp game web & mobile, đa thể loại, đồ họa đẹp trên cả hai nền tảng.",
+    tag: "Gaming · Web · Mobile",
+  },
+  {
+    name: "Music Converter",
+    desc: "Chuyển đổi file nhạc và link thành XML để tải về hoặc nghe trực tuyến.",
+    tag: "Audio · Converter",
+  },
+];
 ---
 
-<html>
-  <head>
-    <title>Allxone Demo</title>
-  </head>
-  <body style="font-family: sans-serif; margin: 0;">
-    
-    <!-- Header -->
-    <header style="padding:20px; background:#0f172a; color:white;">
-      <h2>ALLXONE</h2>
-    </header>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AllXOne — Delivered With A Service MindSet</title>
+  <meta name="description" content="AllXOne là công ty IT chuyên cung cấp dịch vụ phát triển phần mềm, AI, Cloud, Blockchain, tuyển dụng và tư vấn công nghệ tại TP.HCM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-    <!-- Hero -->
-    <section style="padding:80px; text-align:center;">
-      <h1>Giải pháp công nghệ toàn diện</h1>
-      <p>Website demo bằng Astro + Cloudflare</p>
-    </section>
+<!-- ─── NAVBAR ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-x">ALL</span><span class="logo-accent">X</span><span class="logo-x">ONE</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Dịch vụ</a></li>
+      <li><a href="#about">Về chúng tôi</a></li>
+      <li><a href="#products">Sản phẩm</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+    <a href="mailto:info@allxone.vn" class="btn-nav">Liên hệ ngay</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <!-- Services -->
-    <section style="padding:40px; background:#f1f5f9;">
-      <h2>Dịch vụ</h2>
-      <ul>
-        <li>Thiết kế Website</li>
-        <li>SEO</li>
-        <li>Marketing</li>
-      </ul>
-    </section>
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span>IT Services · HCM City, Vietnam</span>
+    </div>
+    <h1 class="hero-title">
+      Giải pháp công nghệ<br />
+      <span class="title-accent">toàn diện</span> cho<br />
+      doanh nghiệp bạn
+    </h1>
+    <p class="hero-sub">
+      Delivered With A Service MindSet — Chúng tôi xây dựng phần mềm, AI,
+      Cloud và cung cấp nhân lực IT chất lượng cao để doanh nghiệp của bạn
+      phát triển bứt phá.
+    </p>
+    <div class="hero-cta">
+      <a href="#services" class="btn-primary">Xem dịch vụ</a>
+      <a href="#contact" class="btn-ghost">Nói chuyện với chúng tôi →</a>
+    </div>
+    <div class="hero-tags">
+      <span>Web App</span><span>Mobile App</span><span>AI / ML</span>
+      <span>Cloud</span><span>Blockchain</span><span>IT Staffing</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="code-card">
+      <div class="code-header">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="code-filename">allxone.config.ts</span>
+      </div>
+      <pre class="code-body"><code><span class="c-kw">export const</span> <span class="c-fn">config</span> = &#123;
+  <span class="c-key">services</span>: [
+    <span class="c-str">"Software Dev"</span>,
+    <span class="c-str">"Cloud & AI"</span>,
+    <span class="c-str">"Blockchain"</span>,
+    <span class="c-str">"IT Staffing"</span>,
+  ],
+  <span class="c-key">mindset</span>: <span class="c-str">"Service First"</span>,
+  <span class="c-key">location</span>: <span class="c-str">"HCM City 🇻🇳"</span>,
+  <span class="c-key">quality</span>: <span class="c-str">"Excellence"</span>,
+&#125;</code></pre>
+    </div>
+    <div class="float-card fc-1">
+      <span class="fc-icon">⚡</span>
+      <div>
+        <div class="fc-label">Delivery Speed</div>
+        <div class="fc-value">On Time</div>
+      </div>
+    </div>
+    <div class="float-card fc-2">
+      <span class="fc-icon">🛡️</span>
+      <div>
+        <div class="fc-label">Code Quality</div>
+        <div class="fc-value">Production Ready</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </body>
+<!-- ─── STATS ─── -->
+<section class="stats-bar">
+  {stats.map(s => (
+    <div class="stat-item">
+      <span class="stat-num">{s.num}</span>
+      <span class="stat-label">{s.label}</span>
+    </div>
+  ))}
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// DỊCH VỤ</span>
+      <h2>Chúng tôi làm được gì<br /><span class="accent">cho bạn?</span></h2>
+      <p>Từ ý tưởng đến sản phẩm — chúng tôi đồng hành trong mọi giai đoạn của hành trình công nghệ.</p>
+    </div>
+    <div class="services-grid">
+      {services.map((s, i) => (
+        <div class="service-card" style={`--delay: ${i * 0.08}s`}>
+          <div class="service-icon">{s.icon}</div>
+          <h3>{s.title}</h3>
+          <p>{s.desc}</p>
+          <div class="service-tags">
+            {s.tags.map(t => <span>{t}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="section about-section" id="about">
+  <div class="container about-grid">
+    <div class="about-left">
+      <span class="section-tag">// VỀ CHÚNG TÔI</span>
+      <h2>Đội ngũ <span class="accent">chuyên gia</span><br />đầy nhiệt huyết</h2>
+      <p class="about-desc">
+        AllXOne là công ty TNHH Dịch vụ IT X, hoạt động tại TP.HCM với sứ mệnh
+        cung cấp dịch vụ công nghệ đáng tin cậy và nhất quán. Chúng tôi tin vào
+        câu ngạn ngữ <em>"Theo đuổi sự xuất sắc và thành công chắc chắn sẽ theo sau."</em>
+      </p>
+      <div class="about-features">
+        <div class="af-item">
+          <span class="af-dot"></span>
+          <span>Nhóm full-stack từ frontend đến backend</span>
+        </div>
+        <div class="af-item">
+          <span class="af-dot"></span>
+          <span>Chuyên gia AI, Cloud và Blockchain</span>
+        </div>
+        <div class="af-item">
+          <span class="af-dot"></span>
+          <span>Hợp tác linh hoạt, giao tiếp minh bạch</span>
+        </div>
+        <div class="af-item">
+          <span class="af-dot"></span>
+          <span>Cam kết chất lượng và đúng tiến độ</span>
+        </div>
+      </div>
+      <div class="about-cta">
+        <a href="/vi/ve-chung-toi/" class="btn-primary">Tìm hiểu thêm</a>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-card-stack">
+        <div class="ac ac-back"></div>
+        <div class="ac ac-mid"></div>
+        <div class="ac ac-front">
+          <div class="ac-header">
+            <div class="ac-avatar">AX</div>
+            <div>
+              <div class="ac-name">AllXOne Team</div>
+              <div class="ac-role">10A Trần Quang Diệu, Q.3 · HCM</div>
+            </div>
+          </div>
+          <div class="ac-divider"></div>
+          <div class="ac-skills">
+            <div class="skill-row">
+              <span>Web Development</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>Mobile App</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>AI / Machine Learning</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+            </div>
+            <div class="skill-row">
+              <span>Cloud Infrastructure</span>
+              <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRODUCTS ─── -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">// SẢN PHẨM</span>
+      <h2>Các sản phẩm <span class="accent">nổi bật</span></h2>
+      <p>Danh mục đa dạng — từ nền tảng tuyển dụng AI đến ứng dụng giải trí và công cụ chuyển đổi.</p>
+    </div>
+    <div class="products-grid">
+      {products.map((p, i) => (
+        <div class="product-card" style={`--delay: ${i * 0.1}s`}>
+          <div class="product-tag">{p.tag}</div>
+          <h3>{p.name}</h3>
+          <p>{p.desc}</p>
+          <a href="#" class="product-link">Xem chi tiết →</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA / CONTACT ─── -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg">
+    <div class="orb orb-cta-1"></div>
+    <div class="orb orb-cta-2"></div>
+  </div>
+  <div class="container cta-inner">
+    <span class="section-tag">// LIÊN HỆ</span>
+    <h2>Sẵn sàng bắt đầu<br /><span class="accent">dự án của bạn?</span></h2>
+    <p>Hãy nói chuyện với chúng tôi — từ ý tưởng đơn giản đến hệ thống phức tạp, chúng tôi luôn sẵn sàng.</p>
+    <div class="cta-actions">
+      <a href="mailto:info@allxone.vn" class="btn-primary btn-large">
+        info@allxone.vn
+      </a>
+      <a href="https://www.facebook.com/AllXOne.vn" target="_blank" rel="noopener" class="btn-ghost">
+        Facebook →
+      </a>
+    </div>
+    <div class="cta-info">
+      <span>📍 10A Trần Quang Diệu, P.14, Q.3, TP.HCM</span>
+      <span>·</span>
+      <span>📍 236 Đinh Bộ Lĩnh, P.26, Bình Thạnh, TP.HCM</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-x">ALL</span><span class="logo-accent">X</span><span class="logo-x">ONE</span>
+      <p>Delivered With A Service MindSet</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Dịch vụ</h4>
+        <a href="#">Phát triển phần mềm</a>
+        <a href="#">Cloud & AI</a>
+        <a href="#">Blockchain</a>
+        <a href="#">IT Staffing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Công ty</h4>
+        <a href="/vi/ve-chung-toi/">Về chúng tôi</a>
+        <a href="/vi/product-it-services-2/">Sản phẩm</a>
+        <a href="/vi/product-it-services-2/tuyen-dung/">Tuyển dụng</a>
+        <a href="mailto:info@allxone.vn">Liên hệ</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 AllXOne — CÔNG TY TNHH DỊCH VỤ IT X</span>
+  </div>
+</footer>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #060810;
+    --bg2: #0c1020;
+    --bg3: #111827;
+    --accent: #00e5ff;
+    --accent2: #7c3aed;
+    --text: #f0f4ff;
+    --muted: #8892a4;
+    --border: rgba(255,255,255,0.07);
+    --card-bg: rgba(255,255,255,0.03);
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(6,8,16,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 0 2rem;
+    height: 64px;
+    display: flex; align-items: center; gap: 2rem;
+  }
+  .logo { text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; }
+  .logo-x { color: var(--text); }
+  .logo-accent { color: var(--accent); }
+  .nav-links { display: flex; gap: 0.25rem; list-style: none; margin-left: auto; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.875rem; font-weight: 400; letter-spacing: 0.01em;
+    padding: 0.4rem 0.75rem; border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+  .btn-nav {
+    font-family: var(--font-body); font-size: 0.875rem; font-weight: 500;
+    padding: 0.5rem 1.1rem; border-radius: 8px;
+    background: var(--accent); color: #000; text-decoration: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .btn-nav:hover { opacity: 0.85; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 100px 2rem 4rem;
+    max-width: 1200px; margin: 0 auto;
+    position: relative; gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .hero-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: -1;
+  }
+  .grid-overlay {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); opacity: 0.25;
+  }
+  .orb-1 { width: 500px; height: 500px; background: var(--accent2); top: -100px; right: -100px; }
+  .orb-2 { width: 400px; height: 400px; background: var(--accent); bottom: 100px; left: -50px; opacity: 0.1; }
+  .orb-3 { width: 300px; height: 300px; background: #1d4ed8; top: 50%; left: 40%; opacity: 0.15; }
+
+  .hero-content { flex: 1; min-width: 320px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,229,255,0.07); border: 1px solid rgba(0,229,255,0.15);
+    padding: 0.35rem 0.9rem; border-radius: 100px;
+    font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .hero-title {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.1;
+    letter-spacing: -0.03em;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .title-accent { color: var(--accent); }
+  .hero-sub {
+    max-width: 520px; color: var(--muted); font-size: 1.05rem;
+    margin-top: 1.25rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-cta {
+    display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    display: inline-block; padding: 0.75rem 1.6rem;
+    background: var(--accent); color: #000; font-weight: 600;
+    border-radius: 10px; text-decoration: none; font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,255,0.25); }
+  .btn-ghost {
+    display: inline-block; padding: 0.75rem 1.6rem;
+    border: 1px solid var(--border); color: var(--text);
+    border-radius: 10px; text-decoration: none; font-size: 0.95rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); background: rgba(0,229,255,0.04); }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .hero-tags span {
+    font-size: 0.75rem; font-family: var(--font-mono);
+    padding: 0.3rem 0.7rem; border-radius: 6px;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    flex: 0 0 400px; position: relative; animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .code-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+  .code-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0.75rem 1rem; background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+  }
+  .code-header .dot { width: 10px; height: 10px; border-radius: 50%; box-shadow: none; animation: none; }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #28c840; }
+  .code-filename { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-left: 4px; }
+  .code-body { padding: 1.25rem 1.5rem; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.7; overflow: auto; }
+  .c-kw { color: #c792ea; }
+  .c-fn { color: #82aaff; }
+  .c-key { color: #80cbc4; }
+  .c-str { color: #c3e88d; }
+
+  .float-card {
+    position: absolute; background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 10px; padding: 0.75rem 1rem;
+    display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+  }
+  .fc-1 { bottom: -20px; right: -30px; animation: float 3s ease-in-out infinite; }
+  .fc-2 { top: -20px; left: -30px; animation: float 3s 1.5s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .fc-icon { font-size: 1.4rem; }
+  .fc-label { font-size: 0.7rem; color: var(--muted); }
+  .fc-value { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+
+  /* ── STATS ── */
+  .stats-bar {
+    background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
+    max-width: 100%; overflow: hidden;
+  }
+  .stat-item {
+    flex: 1; min-width: 160px; padding: 2rem 1rem;
+    text-align: center; border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { display: block; font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--accent); }
+  .stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; display: block; }
+
+  /* ── SECTION ── */
+  .section { padding: 6rem 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-tag {
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
+    letter-spacing: 0.05em; display: block; margin-bottom: 1rem;
+  }
+  .section-header h2 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .section-header p { color: var(--muted); max-width: 500px; margin: 0.75rem auto 0; }
+  .accent { color: var(--accent); }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1px;
+    border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+  }
+  .service-card {
+    background: var(--card-bg); padding: 2rem;
+    border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+    animation: fadeUp 0.5s var(--delay) ease both;
+  }
+  .service-card:hover { background: rgba(0,229,255,0.04); }
+  .service-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .service-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .service-tags span {
+    font-size: 0.7rem; font-family: var(--font-mono);
+    padding: 0.2rem 0.6rem; border-radius: 4px;
+    background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.1);
+    color: var(--accent);
+  }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-left .section-tag { text-align: left; }
+  .about-left h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem,3vw,2.6rem); line-height: 1.15; letter-spacing: -0.02em; text-align: left; }
+  .about-desc { color: var(--muted); margin-top: 1rem; max-width: 480px; }
+  .about-desc em { color: var(--text); font-style: italic; }
+  .about-features { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .af-item { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+  .af-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .about-cta { margin-top: 2rem; }
+
+  .about-card-stack { position: relative; height: 360px; }
+  .ac { position: absolute; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+  .ac-back { inset: 24px 8px 0 8px; background: rgba(124,58,237,0.05); transform: rotate(3deg); }
+  .ac-mid { inset: 12px 4px 0 4px; background: rgba(0,229,255,0.03); transform: rotate(1.5deg); }
+  .ac-front {
+    inset: 0; background: var(--bg3);
+    padding: 1.5rem; display: flex; flex-direction: column;
+  }
+  .ac-header { display: flex; align-items: center; gap: 12px; }
+  .ac-avatar {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent2), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; color: #fff;
+  }
+  .ac-name { font-weight: 600; font-size: 0.95rem; }
+  .ac-role { font-size: 0.75rem; color: var(--muted); }
+  .ac-divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+  .ac-skills { display: flex; flex-direction: column; gap: 0.9rem; }
+  .skill-row { display: flex; flex-direction: column; gap: 5px; }
+  .skill-row span { font-size: 0.78rem; color: var(--muted); }
+  .skill-bar { height: 4px; background: rgba(255,255,255,0.07); border-radius: 4px; overflow: hidden; }
+  .skill-fill { height: 100%; background: linear-gradient(90deg, var(--accent2), var(--accent)); border-radius: 4px; }
+
+  /* ── PRODUCTS ── */
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .product-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2rem;
+    transition: transform 0.3s, border-color 0.3s;
+    animation: fadeUp 0.5s var(--delay) ease both;
+  }
+  .product-card:hover { transform: translateY(-4px); border-color: rgba(0,229,255,0.2); }
+  .product-tag {
+    font-size: 0.72rem; font-family: var(--font-mono); color: var(--accent2);
+    background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.2);
+    padding: 0.25rem 0.65rem; border-radius: 6px; display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .product-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .product-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+  .product-link { font-size: 0.875rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+  .product-link:hover { text-decoration: underline; }
+
+  /* ── CTA ── */
+  .cta-section {
+    position: relative; padding: 6rem 2rem; text-align: center;
+    overflow: hidden;
+  }
+  .cta-bg { position: absolute; inset: 0; pointer-events: none; }
+  .orb-cta-1 { position: absolute; width: 600px; height: 600px; background: var(--accent2); top: -200px; left: -100px; border-radius: 50%; filter: blur(100px); opacity: 0.15; }
+  .orb-cta-2 { position: absolute; width: 400px; height: 400px; background: var(--accent); bottom: -100px; right: -50px; border-radius: 50%; filter: blur(80px); opacity: 0.1; }
+  .cta-inner { position: relative; }
+  .cta-inner h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem,4vw,3.2rem); letter-spacing: -0.02em; margin: 0.5rem 0 1rem; }
+  .cta-inner p { color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; }
+  .cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .btn-large { padding: 1rem 2rem; font-size: 1rem; }
+  .cta-info { margin-top: 2rem; font-size: 0.82rem; color: var(--muted); display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem 1rem; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 3rem 0 0; }
+  .footer-inner { display: flex; gap: 3rem; flex-wrap: wrap; justify-content: space-between; }
+  .footer-brand .logo-x, .footer-brand .logo-accent { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; }
+  .footer-brand p { color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem; }
+  .footer-links { display: flex; gap: 3rem; flex-wrap: wrap; }
+  .footer-col { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col h4 { font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent); letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+  .footer-col a { font-size: 0.875rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--text); }
+  .footer-bottom { text-align: center; padding: 1.5rem 2rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); margin-top: 3rem; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { flex-direction: column; padding-top: 80px; }
+    .hero-visual { flex: none; width: 100%; max-width: 400px; align-self: center; }
+    .fc-1 { right: 0; }
+    .fc-2 { left: 0; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .nav-links { display: none; }
+    .btn-nav { display: none; }
+    .hamburger { display: flex; margin-left: auto; }
+  }
+
+  @media (max-width: 600px) {
+    .stat-item { min-width: 50%; }
+    .hero-visual { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.style.display === 'flex';
+      navLinks.style.display = open ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '64px';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.background = 'rgba(6,8,16,0.97)';
+      navLinks.style.padding = '1rem 2rem';
+      navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.07)';
+    });
+  }
+
+  // Intersection Observer for scroll animations
+  const cards = document.querySelectorAll('.service-card, .product-card');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.style.animationPlayState = 'running';
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(c => { c.style.animationPlayState = 'paused'; obs.observe(c); });
+</script>
+
+</body>
 </html>
